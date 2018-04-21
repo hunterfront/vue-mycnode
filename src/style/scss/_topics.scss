@@ -1,0 +1,81 @@
+#topics {
+  margin-top: 48px;
+}
+/* 提示加载中 */
+.loading {
+  width: 100%;
+  height: 100px;
+  margin-top: 202px;
+  background: url('/static/image/loading.gif') no-repeat center top;
+}
+/* 每个post的样式 */
+.post{
+  &__item {
+    padding: 5px 10px;
+    border-bottom:1px solid #d4d4d4;
+  }
+  &__info {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    line-height: 1.5;
+  }
+  &__author {
+    display: -webkit-flex;
+    display: flex;
+    align-items: center;
+    .avatar {
+      width: 40px;
+      height: 40px;
+      margin-right: 1em;
+      border: 1px solid #f3f3f3;
+      border-radius: 50%;
+    }
+  }
+  &__tag {
+    display: inline-block;
+    width: 3em;
+    line-height: 2em;
+    margin-right: 1em;
+    text-align: center;
+    border-radius: 5px;
+    font-size: $font-m;
+    font-weight: normal;
+    color: $white;
+    vertical-align: 1px;
+    /* 背景颜色 */
+    &.share {
+      background: $green;
+    }
+    &.ask {
+      background: $blue;
+    }
+    &.job {
+      background: $purple;
+    }
+    &.good {
+      background: $yellow;
+    }
+    &.top {
+      background: $red;
+    }
+  }
+  &__title {
+    font-size: $font-l;
+    font-weight: bold;
+    color: $title;
+    @extend .break;
+  }
+  &__info {
+    color: $text;
+  }
+  &__other {
+    text-align: right;
+  }
+  .reply-count {
+    color: $green;
+    font-weight: bold;
+  }
+}

@@ -1,0 +1,108 @@
+
+html {
+  height:100%;
+}
+body {
+  height: 100%;
+  width: 100%;
+  // background: url('/static/image/loading.gif') no-repeat center 250px;
+  font-size: 14px;
+  line-height: 1;
+  color: #313131;
+  overflow-x: hidden;
+}
+
+.clear {
+  zoom:1;
+  &:after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+  &:before {
+    content: '';
+    display: table;
+  }
+}
+
+#app {
+  height: 100%;
+  @extend .clear;
+}
+
+
+.break {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+
+/*
+** rework 分界线
+** ------------
+*/
+/* color */
+$green:#42B983;/* 分享、评论数、小飞机 */
+$red:#E74C3C;/* 置顶 */
+$blue:#3498DB;/* 问答 */
+$yellow:#E67E22;/* 精华 */
+$purple:#9B59B6;/* 招聘 */
+$white: #ffffff;/* 背景 */
+$light: #d5dbdb;/* 边框 */
+$title: #2c3e50;
+$text: #34495e;
+/* font-size */
+$font-l: 16px;
+$font-m: 14px;
+$font-s: 12px;
+$font-xs: 10px;
+/* 基础布局 */
+$gap: 5px;
+$pd-5: $gap;
+$pd-10: $gap*2;
+$pd-15: $gap*3;
+$border: 1px solid $light;
+
+
+/* 综合布局 */
+.text-overflow {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+
+
+
+ 
+
+/* iconfont */
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1449145493_7316074.eot'); /* IE9*/
+  src: url('//at.alicdn.com/t/font_1449145493_7316074.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('//at.alicdn.com/t/font_1449145493_7316074.woff') format('woff'), /* chrome、firefox */
+  url('//at.alicdn.com/t/font_1449145493_7316074.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('//at.alicdn.com/t/font_1449145493_7316074.svg#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+
+.iconfont {
+  font-family:"iconfont" !important;
+  font-size:16px;
+  font-style:normal;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0.2px;
+  -moz-osx-font-smoothing: grayscale;
+}
+.icon-tianjia:before { content: "\e60d"; margin-right: 30px; }
+.icon-fenxiang:before { content: "\e600"; margin-right: 30px; }
+.icon-shezhi:before { content: "\e601"; margin-right: 30px;}
+.icon-wenda:before { content: "\e602"; margin-right: 30px;}
+.icon-hao:before { content: "\e603"; margin-right: 30px;}
+.icon-quanbu:before { content: "\e604"; margin-right: 30px;}
+.icon-zhaopin:before { content: "\e605"; margin-right: 30px;}
+.icon-xiaoxi:before { content: "\e606"; margin-right: 30px;}
+.icon-about:before { content: "\e607"; margin-right: 30px;}
+

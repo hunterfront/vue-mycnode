@@ -1,0 +1,42 @@
+#side-bar{
+  position: absolute;
+  top: 0;
+  left: -200px;
+  z-index: 3;
+  display: -webkit-flex;
+  display:flex;
+  flex-flow: column nowrap;
+  width:200px;
+  height: 1000px;
+  background-color: #fff;
+}
+.menu{
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: column nowrap;
+  border-top: 1px solid #d5dbdb;
+  margin:0 25px 0 25px;
+  padding-top: 20px;
+  font-size: $font-m;
+  font-weight: 700;
+  line-height: 3;
+  &__item {
+    color:#313131;
+  }
+}
+.msg-about-box {
+  display: -webkit-flex;
+  display: flex;
+  flex-flow: column nowrap;
+  border-top: 1px solid #d5dbdb;
+  margin:0 25px 0 25px;
+  font-size: $font-m;
+  font-weight: 700;
+  line-height: 3;
+  .message{
+    color:#313131;
+  }
+  .about{
+    color:#313131;
+  }
+} 

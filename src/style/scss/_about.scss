@@ -1,0 +1,24 @@
+
+#about {
+  height: 100%;
+  padding-top: 48px;
+  box-sizing: border-box;
+}
+.about-info {
+  height:100%;
+  padding: 10px 10px;
+  box-sizing: border-box;
+  background: #F7F7F7;
+  h3 {
+    line-height: 3;
+  }
+  p,a{
+    line-height: 2;
+  }
+}
+.desc,.address{
+  border-bottom: 1px solid #dbdbd5;
+  margin-bottom: 10px;
+}
+
+
