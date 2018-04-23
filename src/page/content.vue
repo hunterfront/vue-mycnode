@@ -26,7 +26,33 @@
         </div>
       </div>
       <div class="article__content markdown-body" v-html="topic.content"></div>
-      <div class="article__reply"></div>
+      <div class="reply-box">
+        <div class="reply-box__count">
+          <span class="count">{{topic.reply_count}}</span>
+          <span class="txt">回复</span>
+        </div>
+        <ul class="reply-list">
+          <li class="reply-item" v-for="reply in topic.replies" :key="reply.id">
+            <div class="reply-info">
+              <div class="author">
+                <img class="avatar avatar--m" :src="reply.author.avatar_url"/>
+                <div class="logname-pubtime">
+                    <p class="logname">{{reply.author.loginname}}</p>
+                    <p class="pubtime">发布于:{{$utils.goodTime(reply.create_at)}}</p>
+                </div>
+              </div>
+              <div class="like-replyto">
+                <span class="like">
+                  <i class="icon iconfont">&#xe608;</i>
+                  <span class="like-count">{{reply.ups.length}}</span>
+                </span>
+                <span class="replyto icon iconfont">&#xe609;</span>
+              </div>
+            </div>
+            <div class="reply-content markdown-body" v-html="reply.content"></div>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>

@@ -86,6 +86,9 @@ $border: 1px solid $light;
     margin-right: 1em;
     border: 1px solid #f3f3f3;
     border-radius: 50%;
+    &--m{
+      border-radius: 10px;
+    }
   }
 }
 /* tag背景颜色 */

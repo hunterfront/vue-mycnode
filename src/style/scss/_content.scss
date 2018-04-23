@@ -33,3 +33,34 @@
     }
   }
 }
+.reply-box {
+  margin-top: 10px;
+  &__count {
+    line-height: 3;
+    border-top:1px solid #d5d5db;
+    border-bottom:1px solid #d5d5db;
+    font-size: $font-l;
+    font-weight: 700;
+    .count {
+      color: $green;
+    }
+  }
+}
+.reply-item {
+  padding: 10px 0;
+  border-bottom: 1px solid #d4d4d4;
+  .reply-info{
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .like-replyto{
+      .iconfont {
+      font-size: 26px;
+      }
+    }
+  }
+  .reply-content {
+    line-height: 1.5;
+  }
+}

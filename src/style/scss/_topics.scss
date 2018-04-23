@@ -38,7 +38,9 @@
   }
   &__title {
     font-size: $font-l;
-    font-weight: bold;
+    font-weight: bold;.reply {
+    margin-top: 10px;
+  }
     color: $title;
     @extend .break;
   }
