@@ -11,8 +11,7 @@ export default new Router({
     {
       path: '/topics',
       name: 'Topics',
-      component: Topics,
-      props: (route) => ({query: route.query.tab})
+      component: Topics
     },
     {
       path: '/about',

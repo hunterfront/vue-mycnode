@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nv-head ref="head" :head-txt="$utils.getTabInfo(query)"></nv-head>
+    <nv-head ref="head" :head-txt="$utils.getTabInfo(serchKey.tab)"></nv-head>
     <div id="topics">
       <!-- loading -->
       <div class="loading" v-if="loading">
@@ -54,33 +54,55 @@ export default{
   beforeRouteUpdate (to, from, next) {
     // 路由更新改变head状态
     this.$refs.head.isOpen = false
-    this.fetchData(to.query.tab)
+    this.serchKey.tab = to.query.tab
+    this.post = []
+    this.fetchData({tab: to.query.tab, page: 1, limit: 20, mdrender: true})
     next()
   },
-  // 路由props：query
-  props: ['query'],
+  // // 路由props：tab
+  // props: ['tab'],
   data () {
     return {
       loading: false,
-      post: null,
-      error: null
+      post: [],
+      error: null,
+      serchKey: {
+        tab: 'all',
+        page: 1,
+        limit: 20,
+        mdrender: true
+      }
     }
   },
   created () {
-    this.fetchData('all')
+    this.fetchData(this.serchKey)
+  },
+  mounted () {
+    window.onscroll = this.$utils.throttle(this.getScrollData, 300, 1000)
   },
   methods: {
-    fetchData (query) {
-      this.error = this.post = null
+    fetchData ({tab, page, limit, mdrender}) {
+      this.error = null
       this.loading = true
-      this.$api.get('topics', {tab: query}, data => {
+      this.$api.get('topics', {tab: tab, page: page, limit: limit, mdrender: mdrender}, data => {
         this.loading = false
-        this.post = data.data
+        this.post.push(...data.data)
         console.log(this.post)
       }, (error) => {
         this.loading = false
         this.error = error
       })
+    },
+    getScrollData () {
+      let scrollHeight = parseInt(document.documentElement.scrollHeight)
+      let clientHeight = parseInt(document.documentElement.clientHeight || window.innerHeith)
+      let scrollTop = parseInt(document.documentElement.scrollTop)
+      let gap
+      if ((gap = (scrollHeight - clientHeight - scrollTop)) <= 200) {
+        console.log(gap)
+        this.serchKey.page++
+        this.fetchData(this.serchKey)
+      }
     }
   }
 }
