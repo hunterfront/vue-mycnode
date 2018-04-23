@@ -20,7 +20,7 @@
               </h3>
             </div>
             <div class="post__info">
-              <div class="post__author">
+              <div class="author">
                 <img class="avatar" :src="item.author.avatar_url"/>
                 <div class="logname-pubtime">
                   <p class="logname">{{item.author.loginname}}</p>

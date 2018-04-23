@@ -53,6 +53,7 @@ $light: #d5dbdb;/* 边框 */
 $title: #2c3e50;
 $text: #34495e;
 /* font-size */
+$font-xl: 18px;
 $font-l: 16px;
 $font-m: 14px;
 $font-s: 12px;
@@ -70,6 +71,38 @@ $border: 1px solid $light;
   white-space: nowrap;
   text-overflow: ellipsis;
   overflow: hidden;
+}
+/****
+ **common样式
+ *****/
+.author {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  line-height: 1.5;
+  .avatar {
+    width: 40px;
+    height: 40px;
+    margin-right: 1em;
+    border: 1px solid #f3f3f3;
+    border-radius: 50%;
+  }
+}
+/* tag背景颜色 */
+.share {
+  background: $green;
+}
+.ask {
+  background: $blue;
+}
+.job {
+  background: $purple;
+}
+.good {
+  background: $yellow;
+}
+.top {
+  background: $red;
 }
 
 

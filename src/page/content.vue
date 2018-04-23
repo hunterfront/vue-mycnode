@@ -13,11 +13,19 @@
         {{topic.title}}
       </h2>
       <div class="article__info">
-        <div class="lf-info">
+        <div class="author">
+          <img class="avatar" :src="topic.author.avatar_url"/>
+          <div class="logname-pubtime">
+            <p class="logname">{{topic.author.loginname}}</p>
+            <p class="pubtime">发布于:{{$utils.goodTime(topic.create_at)}}</p>
+          </div>
         </div>
-        <div class="rt-info"></div>
+        <div class="other">
+          <p class="tag" :class="[topic.tab, {top: topic.top, good: topic.good}]">{{$utils.getTagTxt(topic.tab,topic.top,topic.good)}}</p>
+          <p class="visit-count">{{topic.visit_count}}次浏览</p>
+        </div>
       </div>
-      <div class="article__content"></div>
+      <div class="article__content markdown-body" v-html="topic.content"></div>
       <div class="article__reply"></div>
     </div>
   </div>

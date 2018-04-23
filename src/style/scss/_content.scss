@@ -4,4 +4,32 @@
 }
 .article {
   @extend .clear;
+  padding: 10px 10px 0 10px;
+  &__title {
+    padding:5px;
+    margin-bottom: 10px;
+    border-radius: 4px;
+    background: #f0f0f0;
+    font-size: $font-xl;
+    color: $title;
+  }
+  &__info {
+    display: -webkit-flex;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: $font-s;
+    line-height: 1.5;
+    color: $text;
+    .other {
+      text-align: right;
+      .tag {
+        line-height: 2em;
+        border-radius: 5px;
+        color: $white;
+        text-align: center;
+      }
+    }
+  }
 }

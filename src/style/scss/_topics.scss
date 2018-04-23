@@ -22,18 +22,7 @@
     margin-top: 10px;
     line-height: 1.5;
   }
-  &__author {
-    display: -webkit-flex;
-    display: flex;
-    align-items: center;
-    .avatar {
-      width: 40px;
-      height: 40px;
-      margin-right: 1em;
-      border: 1px solid #f3f3f3;
-      border-radius: 50%;
-    }
-  }
+  
   &__tag {
     display: inline-block;
     width: 3em;
@@ -45,22 +34,7 @@
     font-weight: normal;
     color: $white;
     vertical-align: 1px;
-    /* 背景颜色 */
-    &.share {
-      background: $green;
-    }
-    &.ask {
-      background: $blue;
-    }
-    &.job {
-      background: $purple;
-    }
-    &.good {
-      background: $yellow;
-    }
-    &.top {
-      background: $red;
-    }
+    
   }
   &__title {
     font-size: $font-l;
