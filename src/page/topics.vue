@@ -66,6 +66,7 @@ export default{
       loading: false,
       post: [],
       error: null,
+      scroll: false,
       serchKey: {
         tab: 'all',
         page: 1,
@@ -86,6 +87,7 @@ export default{
       this.loading = true
       this.$api.get('topics', {tab: tab, page: page, limit: limit, mdrender: mdrender}, data => {
         this.loading = false
+        this.scroll = true
         this.post.push(...data.data)
         console.log(this.post)
       }, (error) => {
@@ -94,14 +96,14 @@ export default{
       })
     },
     getScrollData () {
-      let scrollHeight = parseInt(document.documentElement.scrollHeight)
-      let clientHeight = parseInt(document.documentElement.clientHeight || window.innerHeith)
-      let scrollTop = parseInt(document.documentElement.scrollTop)
-      let gap
-      if ((gap = (scrollHeight - clientHeight - scrollTop)) <= 200) {
-        console.log(gap)
-        this.serchKey.page++
-        this.fetchData(this.serchKey)
+      if (this.scroll) {
+        let scrollHeight = parseInt(document.documentElement.scrollHeight)
+        let clientHeight = parseInt(document.documentElement.clientHeight || window.innerHeith || document.body.clientHeight)
+        let scrollTop = parseInt(document.documentElement.scrollTop)
+        if (scrollHeight - clientHeight - scrollTop <= 200) {
+          this.serchKey.page++
+          this.fetchData(this.serchKey)
+        }
       }
     }
   }
