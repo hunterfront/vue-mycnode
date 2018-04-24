@@ -78,11 +78,10 @@ export default {
   throttle: (fn, wait, mustRun) => {
     let timeout
     let startTime = new Date()
-    return function () {
+    return function inThrottle () {
       let context = this
       let args = arguments
       let curTime = new Date()
-
       clearTimeout(timeout)
       // 如果达到了规定的触发时间间隔，触发 handler
       if (curTime - startTime >= mustRun) {

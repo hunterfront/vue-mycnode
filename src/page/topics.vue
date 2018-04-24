@@ -59,14 +59,32 @@ export default{
     this.fetchData({tab: to.query.tab, page: 1, limit: 20, mdrender: true})
     next()
   },
-  // // 路由props：tab
-  // props: ['tab'],
+  beforeRouteLeave (to, from, next) {
+    // 如果跳转到详情页则记录相关数据，方便从详情页跳转回来时加载之前的数据
+    if (to.name === 'Content') {
+      window.sessionStorage.scrollTop = document.documentElement.scrollTop || document.body.scrollTop
+      window.sessionStorage.post = JSON.stringify(this.post)
+      window.sessionStorage.serchKey = JSON.stringify(this.serchKey)
+      window.sessionStorage.tab = from.query.tab || 'all'
+    }
+    next()
+  },
+  beforeRouteEnter (to, from, next) {
+    if (from.name !== 'Content') {
+      // 页面切换移除之前记录的数据集
+      if (window.sessionStorage.tab) {
+        window.sessionStorage.removeItem('post')
+        window.sessionStorage.removeItem('searchKey')
+        window.sessionStorage.removeItem('tab')
+      }
+    }
+    next()
+  },
   data () {
     return {
       loading: false,
       post: [],
       error: null,
-      scroll: false,
       serchKey: {
         tab: 'all',
         page: 1,
@@ -76,10 +94,22 @@ export default{
     }
   },
   created () {
-    this.fetchData(this.serchKey)
+    if (this.$route.query && this.$route.query.tab) {
+      this.serchKey.tab = this.$route.query.tab
+    }
+    // 如果页面返回前有对应的查询条件和参数，则渲染之前的数据
+    if (window.sessionStorage.serchKey && window.sessionStorage.tab === this.serchKey.tab) {
+      this.post = JSON.parse(window.sessionStorage.post)
+      this.serchKey = JSON.parse(window.sessionStorage.serchKey)
+      this.$nextTick(() => { window.scrollTop = window.sessionStorage.scrollTop })
+    } else {
+      this.fetchData(this.serchKey)
+    }
   },
   mounted () {
-    window.onscroll = this.$utils.throttle(this.getScrollData, 300, 1000)
+    this.$nextTick(() => {
+      window.addEventListener('scroll', this.$utils.throttle(this.getScrollData, 300, 1000))
+    })
   },
   methods: {
     fetchData ({tab, page, limit, mdrender}) {
@@ -89,21 +119,18 @@ export default{
         this.loading = false
         this.scroll = true
         this.post.push(...data.data)
-        console.log(this.post)
       }, (error) => {
         this.loading = false
         this.error = error
       })
     },
     getScrollData () {
-      if (this.scroll) {
-        let scrollHeight = parseInt(document.documentElement.scrollHeight)
-        let clientHeight = parseInt(document.documentElement.clientHeight || window.innerHeith || document.body.clientHeight)
-        let scrollTop = parseInt(document.documentElement.scrollTop)
-        if (scrollHeight - clientHeight - scrollTop <= 200) {
-          this.serchKey.page++
-          this.fetchData(this.serchKey)
-        }
+      let scrollHeight = parseInt(document.documentElement.scrollHeight)
+      let clientHeight = parseInt(document.documentElement.clientHeight || window.innerHeith || document.body.clientHeight)
+      let scrollTop = parseInt(document.documentElement.scrollTop || document.body.scrollTop)
+      if (scrollHeight - clientHeight - scrollTop <= 200) {
+        this.serchKey.page++
+        this.fetchData(this.serchKey)
       }
     }
   }

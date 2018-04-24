@@ -11,14 +11,14 @@ export default {
     }
   },
   mounted () {
-    window.onscroll = () => {
+    window.addEventListener('scroll', () => {
       let scrollTop = document.body.scrollTop || document.documentElement.scrollTop
       if (scrollTop > 270) {
         this.show = true
       } else {
         this.show = false
       }
-    }
+    })
   },
   methods: {
     toTop () {
