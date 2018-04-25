@@ -1,0 +1,33 @@
+#login {
+  @extend .clear;
+  padding-top: 48px;
+}
+.loginbar {
+  margin-top: 100px;
+  padding: 0 10px;
+  &__button {
+    width:100%;
+    line-height:2em;
+    font-size: $font-xl;
+    color: $white;
+    background: $green;
+    border-style: none;
+    border-radius: 5px;
+  }
+  &__input {
+    width: 100%;
+    padding: 0 5px;
+    box-sizing: border-box;
+    input {
+      width: 100%;
+      border: none;
+      outline: none;
+      padding-bottom: 5px;
+    }
+    .line {
+      width: 100%;
+      border-bottom: 1px solid $green;
+      margin-bottom: 5px;
+    }
+  }
+}

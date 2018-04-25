@@ -1,6 +1,6 @@
 <template>
   <div id="side-bar">
-    <div class="user">user</div>
+    <userinfo></userinfo>
     <div class="menu">
       <router-link class="menu__item" :to="{name:'Topics',query:{tab:'all'}}">
         <i class="iconfont icon-quanbu"></i>
@@ -36,4 +36,8 @@
   </div>
 </template>
 <script>
+import userinfo from './userinfo.vue'
+export default {
+  components: {userinfo}
+}
 </script>

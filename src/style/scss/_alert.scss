@@ -1,0 +1,25 @@
+.alert {
+  line-height: 32px;
+  font-size: $font-l;
+  text-align: center;
+  transform: translate(0,-32px);
+  &.on {
+    animation: myalert 1s ease both;
+  }
+}
+
+@keyframes myalert
+{
+  0% {
+    transform: translate(0, -32px);
+  }
+  25% {
+    transform: translate(0, -12px);
+  }
+  50% {
+    transform: translate(0, 0);
+  }
+  100% {
+    transform: translate(0, -32px); 
+  }
+}

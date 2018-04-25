@@ -44,6 +44,7 @@ body {
 */
 /* color */
 $green:#42B983;/* 分享、评论数、小飞机 */
+$green-2:#A6CC55;
 $red:#E74C3C;/* 置顶 */
 $blue:#3498DB;/* 问答 */
 $yellow:#E67E22;/* 精华 */
@@ -88,6 +89,26 @@ $border: 1px solid $light;
     border-radius: 50%;
     &--m{
       border-radius: 10px;
+    }
+  }
+}
+.tab {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  a {
+    flex: auto;
+    color: $text;
+    line-height: 3;
+    font-weight: bold;
+    border-bottom: 2px solid #d4d4d4;
+    &:first-child {
+      border-right: 1px solid #d4d4d4;
+    }
+    &.active {
+      color: $red;
+      border-bottom-color: $red;
     }
   }
 }

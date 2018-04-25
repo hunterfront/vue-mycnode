@@ -1,0 +1,61 @@
+#pageuser {
+  padding-top: 48px;
+}
+.user {
+  .wraper{
+    text-align: center;
+    background: #ddd;
+    padding: 10px 0;
+  }
+  .avatar {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+  }
+  .loginname {
+    font-size: $font-l;
+    margin-top:10px;
+  }
+  .score {
+    color: $green-2;
+    margin-top: 10px;
+  }
+}
+.recent-topics, .recent-replies {
+  &__item{
+    display: -webkit-flex;
+    display: flex;
+    padding: 10px;
+    border-bottom: 1px solid #dbdbd4;
+    .bar {
+      flex: 1;
+      //使.break生效
+      width:100px;
+      overflow: hidden;
+      margin-left: 10px;
+      display: flex;
+      flex-flow: column nowrap;
+      justify-content: space-around;
+      .title {
+        @extend .break;
+        color: $title;
+      }
+    }
+    .avatar{
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+    }
+    .logname-pubtime{
+      display: -webkit-flex;
+      display: flex;
+      justify-content: space-between;
+      .pubtime {
+        color: $green-2;
+      }
+      .logname{
+        color: $text;
+      }
+    }
+  }
+}

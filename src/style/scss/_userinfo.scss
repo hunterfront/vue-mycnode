@@ -1,0 +1,43 @@
+.user-info {
+  margin:10px 25px;
+  height: 40px;
+}
+.login-no {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  i {
+    width: 28px;
+    height: 28px;
+    margin-right: 10px;
+    background: url('../static/image/login_icon.png') no-repeat;
+    background-size: 28px;
+  }
+  span {
+    color: $text;
+    font-size: $font-l;
+  }
+}
+.login-yes {
+  display: -webkit-flex;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
+  .avatar {
+    width: 40px;
+    height: 40px;
+    background: red;
+    border-radius: 50%;
+  }
+  .username {
+    color: $text;
+  }
+  i {
+    width: 8px;
+    height: 16px;
+    background: url('../static/image/go_icon.png') no-repeat;
+    background-size: 8px 16px;
+  }
+}
