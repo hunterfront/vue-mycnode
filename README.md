@@ -1,7 +1,7 @@
 # vue-mycnode
 
 > A Vue.js project
-github page: [https://hunterfront.github.io/vue-mycnode/dist/#/topics](https://hunterfront.github.io/vue-mycnode/dist/#/topics)
+github page: [https://hunterfront.github.io/vue-mycnode/dist/#/](https://hunterfront.github.io/vue-mycnode/dist/#/)
 
 ## Build Setup
 
