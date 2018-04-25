@@ -4,7 +4,7 @@
     <alert :alert-txt="alertTxt" :is-on="isOn"></alert>
     <div class="loginbar">
       <div class="loginbar__input">
-        <input type="text" maxlength="36" placeholder="access token" v-model.trim="accesstoken">
+        <input type="text"  placeholder="access token" v-model.trim="accesstoken">
         <div class="line"></div>
       </div>
       <button class="loginbar__button" @click="login(accesstoken)">登录</button>
