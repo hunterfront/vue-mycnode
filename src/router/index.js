@@ -6,6 +6,7 @@ import Content from '@/page/content'
 import Login from '@/page/login'
 import User from '@/page/user'
 import Index from '@/page/index'
+import Message from '@/page/message'
 
 Vue.use(Router)
 
@@ -41,6 +42,11 @@ export default new Router({
       path: '/user/:loginname',
       name: 'User',
       component: User
+    },
+    {
+      path: '/message',
+      name: 'Message',
+      component: Message
     }
   ]
 })

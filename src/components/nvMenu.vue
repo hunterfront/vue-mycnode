@@ -24,7 +24,7 @@
       </router-link>
     </div>
     <div class="msg-about-box">
-      <router-link class="message" to="" >
+      <router-link class="message" :to="{name:'Message'}" >
         <i class="iconfont icon-xiaoxi"></i>
         <span>消息</span>
       </router-link>

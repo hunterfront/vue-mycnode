@@ -1,0 +1,40 @@
+#msg-box {
+  padding-top: 48px;
+}
+.has-read, .hasnot-read{
+  padding: 15px 10px 0;
+}
+.reply-user-box {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  .reply-time {
+    font-size: $font-s;
+    color: $green-2;
+  }
+  .reply-user {
+    font-size: $font-xl;
+  }
+  .avatar{
+    vertical-align: text-top;
+    width: 40px;
+    height: 40px;
+    border-radius: 15px;
+  }
+}
+.reply-content {
+  p {
+    margin-top: 10px;
+    font-size: $font-l;
+  }
+}
+.reply-topic {
+  font-size: 24px;
+  line-height: 1.8;
+  padding-left: 10px;
+  margin-top: 5px;
+  background:#dbdbdb;
+  border-radius: 10px;
+  color: $title;
+  @extend .break;
+}
