@@ -6,7 +6,7 @@
       <span class="nv-bar__txt">{{headTxt}}</span>
       <div class="nv-bar__add">
         <router-link to="/add">
-          <i class="iconfont add-icon">&#xe60f;</i>
+          <i class="iconfont add-icon">&#xe7ed;</i>
         </router-link>
       </div>
     </div>

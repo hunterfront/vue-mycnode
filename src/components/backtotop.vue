@@ -1,6 +1,6 @@
 <template>
   <div class="iconfont icon-top" v-show="show" @click="toTop">
-    &#xe611;
+    &#xe6c9;
   </div>
 </template>
 <script>
@@ -38,6 +38,6 @@ export default {
   bottom: 80px;
   font-size: 50px;
   z-index: 999;
-  color: #42b983;
+  color: #41B883;
 }
 </style>

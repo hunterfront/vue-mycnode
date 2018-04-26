@@ -43,10 +43,10 @@
               </div>
               <div class="like-replyto">
                 <span class="like">
-                  <i class="icon iconfont">&#xe608;</i>
+                  <i class="icon iconfont">&#xe641;</i>
                   <span class="like-count">{{reply.ups.length}}</span>
                 </span>
-                <span class="replyto icon iconfont">&#xe609;</span>
+                <span class="replyto icon iconfont">&#xe60e;</span>
               </div>
             </div>
             <div class="reply-content markdown-body" v-html="reply.content"></div>
