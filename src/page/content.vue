@@ -35,7 +35,9 @@
           <li class="reply-item" v-for="reply in topic.replies" :key="reply.id">
             <div class="reply-info">
               <div class="author">
-                <img class="avatar avatar--m" :src="reply.author.avatar_url"/>
+                <router-link :to="{name:'User',params:{loginname:reply.author.loginname}}">
+                  <img class="avatar avatar--m" :src="reply.author.avatar_url"/>
+                </router-link>
                 <div class="logname-pubtime">
                     <p class="logname">{{reply.author.loginname}}</p>
                     <p class="pubtime">发布于:{{$utils.goodTime(reply.create_at)}}</p>

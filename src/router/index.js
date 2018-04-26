@@ -42,8 +42,7 @@ export default new Router({
     {
       path: '/user/:loginname',
       name: 'User',
-      component: User,
-      meta: { requiresAuth: true }
+      component: User
     },
     {
       path: '/message',
