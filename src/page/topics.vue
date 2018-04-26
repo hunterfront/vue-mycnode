@@ -126,8 +126,8 @@ export default{
     },
     getScrollData () {
       let scrollHeight = parseInt(document.documentElement.scrollHeight)
-      let clientHeight = parseInt(document.documentElement.clientHeight || window.innerHeith || document.body.clientHeight)
-      let scrollTop = parseInt(document.documentElement.scrollTop || document.body.scrollTop)
+      let clientHeight = parseInt(document.documentElement.clientHeight || window.innerHeith || document.body.clientHeight, 15)
+      let scrollTop = parseInt(document.documentElement.scrollTop || document.body.scrollTop, 15)
       if (scrollHeight - clientHeight - scrollTop <= 200) {
         this.serchKey.page++
         this.fetchData(this.serchKey)
