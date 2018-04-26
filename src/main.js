@@ -18,6 +18,21 @@ Vue.config.productionTip = false
 if (window.sessionStorage.user) {
   store.dispatch('setUserInfo', JSON.parse(window.sessionStorage.user))
 }
+// 未登录时重定向到登录页
+router.beforeEach((to, from, next) => {
+  if (to.matched.some(record => record.meta.requiresAuth)) {
+    if (!store.state.userInfo.userId) {
+      next({
+        path: '/login',
+        query: { redirect: to.fullPath }
+      })
+    } else {
+      next()
+    }
+  } else {
+    next() // 确保一定要调用 next()
+  }
+})
 
 /* eslint-disable no-new */
 new Vue({

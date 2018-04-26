@@ -7,6 +7,7 @@ import Login from '@/page/login'
 import User from '@/page/user'
 import Index from '@/page/index'
 import Message from '@/page/message'
+import Add from '@/page/add'
 
 Vue.use(Router)
 
@@ -41,12 +42,20 @@ export default new Router({
     {
       path: '/user/:loginname',
       name: 'User',
-      component: User
+      component: User,
+      meta: { requiresAuth: true }
     },
     {
       path: '/message',
       name: 'Message',
-      component: Message
+      component: Message,
+      meta: { requiresAuth: true }
+    },
+    {
+      path: '/add',
+      name: 'Add',
+      component: Add,
+      meta: { requiresAuth: true }
     }
   ]
 })

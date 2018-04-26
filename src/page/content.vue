@@ -80,7 +80,6 @@ export default{
       this.$api.get('topic/' + id, null, data => {
         this.loading = false
         this.topic = data.data
-        console.log(this.topic)
       }, (error) => {
         this.loading = false
         this.error = error
