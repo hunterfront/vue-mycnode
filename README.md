@@ -1,5 +1,5 @@
 # 用Vue.js重写的cnode社区
-用Vue.js，基于cnode的公共api打造的开源cnode社区webapp，实现了异步分页加载浏览、登录、用户中心等功能。
+用Vue.js(2.9.3)，基于cnode的公共api打造的开源cnode社区webapp，实现了异步分页加载浏览、登录、用户中心等功能。
 ## 预览
 ![](./static/image/readme/login.gif)
 ![](./static/image/readme/router.gif)
