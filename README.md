@@ -16,11 +16,40 @@
 - vue-router2：实现路由配置
 - vuex：对共享状态进行管理，主要是对登录状态的管理
 - axios：一个基于Promise的HTTP库，对其进行封装，用于向后端发起请求获取数据
-- es6语法：箭头函数、let、const、扩展运算符、属性简写、解构赋值等等。
+- nodejs:前端开发环境
+- npm：前端包管理器
+- es6语法：模块、箭头函数、let、const、扩展运算符、属性简写、解构赋值等等。
+- eslint：语法规范检查
 - sessionStorage：保存用户登录状态和相关数据。
 - webpack:对项目进行打包，打包到子目录时路径的配置很重要。
 - SCSS：css预处理。
 - flex：flex布局，简单好用，几乎万能。
+## 项目结构
+├─build               //编译配置
+├─config              //项目基本设置
+├─dist                //打包后文件
+│  └─static
+│      ├─css
+│      ├─image
+│      └─js 
+├─src                 //源码文件
+│  ├─api              //http
+│  ├─assets           //项目资源文件
+│  ├─components       //组件
+│  ├─config           //项目配置
+│  ├─frame            //子路有
+│  ├─page             //各个页面
+│  ├─router           //路由
+│  ├─style            //样式
+│  │  ├─base
+│  │  └─scss
+│  ├─utils            //工具函数
+│  └─vuex             //vuex状态管理
+└─static              //静态资源文件
+    ├─image
+    │  └─readme
+    └─js
+
 ## 总结
 1. 当组件嵌套比较复杂或者许多个组件共享一个状态的时候，用vuex十分合适，如果共享的状态不是很复杂也可以考虑用global-event-bus解决
 2. 事先要对项目有一个整体的把握，搞清楚要编写哪些页面和组件，以及它们之间的关系，要传递的数据有什么等等

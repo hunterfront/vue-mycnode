@@ -1,0 +1,27 @@
+卷 娱乐 的文件夹 PATH 列表
+卷序列号为 0000-38E5
+F:.
+├─build
+├─config
+├─dist
+│  └─static
+│      ├─css
+│      ├─image
+│      └─js 
+├─src
+│  ├─api
+│  ├─assets
+│  ├─components
+│  ├─config
+│  ├─frame
+│  ├─page
+│  ├─router
+│  ├─style
+│  │  ├─base
+│  │  └─scss
+│  ├─utils
+│  └─vuex
+└─static
+    ├─image
+    │  └─readme
+    └─js
