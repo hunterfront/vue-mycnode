@@ -3,7 +3,8 @@
 ## 预览
 在线预览地址：[https://hunterfront.github.io/vue-mycnode/dist/#/](https://hunterfront.github.io/vue-mycnode/dist/#/)
 <br>
-移动端扫码食用效果更佳：![](./static/image/readme/shaoma.png)
+移动端扫码食用效果更佳：   
+![](./static/image/readme/shaoma.png)
 
 
 ## Build Setup
