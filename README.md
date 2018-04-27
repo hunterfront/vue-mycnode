@@ -1,7 +1,10 @@
-# vue-mycnode
+# 用Vue.js重写的cnode社区
+用Vue.js，基于cnode的公共api打造的开源cnode社区，实现了异步分页加载浏览、登录、用户中心等功能。
+## 预览
+在线预览地址：[https://hunterfront.github.io/vue-mycnode/dist/#/](https://hunterfront.github.io/vue-mycnode/dist/#/)
+移动端扫码食用效果更佳：
+![](./static/image/shaoma.png)
 
-> A Vue.js project
-github page: [https://hunterfront.github.io/vue-mycnode/dist/#/](https://hunterfront.github.io/vue-mycnode/dist/#/)
 
 ## Build Setup
 
